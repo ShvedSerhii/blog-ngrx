@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+    height: 15vh;
+    background-color: darkblue;
+    opacity: 0.7;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .wrapper div {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+  }
+  
+  .title {
+    justify-content: flex-start;
+  }
+  
+  .logout {
+    justify-content: flex-end;
+  }
