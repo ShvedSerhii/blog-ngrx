@@ -8,7 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { EffectsModule } from '@ngrx/effects';
 import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
@@ -20,7 +19,6 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { entityConfig } from './services/entity-metadata';
-
 
 @NgModule({
   declarations: [
@@ -46,11 +44,10 @@ import { entityConfig } from './services/entity-metadata';
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig)
   ],
-  providers: [ {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+  providers: [
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
   ],
   bootstrap: [AppComponent],
-  entryComponents: [
-    AddArticleComponent
-  ],
+  entryComponents: [AddArticleComponent]
 })
-export class AppModule { }
+export class AppModule {}

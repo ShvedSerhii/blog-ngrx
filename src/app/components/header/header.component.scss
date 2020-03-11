@@ -1,22 +1,22 @@
 .wrapper {
-    display: flex;
-    height: 15vh;
-    background-color: #424242;
-    color: white;
-    align-items: center;
-    justify-content: space-around;
-  }
-  
-  .wrapper div {
-    width: 100%;
-    padding: 40px;
-    display: flex;
-  }
-  
-  .title {
-    justify-content: flex-start;
-  }
-  
-  .logout {
-    justify-content: flex-end;
-  }
+  display: flex;
+  height: 15vh;
+  background-color: #424242;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.wrapper div {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+}
+
+.title {
+  justify-content: flex-start;
+}
+
+.logout {
+  justify-content: flex-end;
+}

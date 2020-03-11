@@ -17,7 +17,7 @@ export class AddArticleComponent {
     this.form = new AddArticleForm(data);
   }
 
-  cancel(): void { 
+  cancel(): void {
     this.dialogRef.close();
   }
 }

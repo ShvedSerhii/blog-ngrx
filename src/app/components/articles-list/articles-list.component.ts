@@ -13,9 +13,7 @@ import { Observable } from 'rxjs';
 export class ArticlesListComponent {
   public articles$: Observable<Article[]>;
 
-  constructor(
-    public dialog: MatDialog, private store: ArticleService
-  ) {
+  constructor(public dialog: MatDialog, private store: ArticleService) {
     this.articles$ = store.entities$;
   }
 
@@ -32,7 +30,7 @@ export class ArticlesListComponent {
       if (result.title && result.author && result.content) {
         result.id = new Date().getUTCMilliseconds();
         this.store.addOneToCache(result);
-      } 
+      }
     });
   }
 }

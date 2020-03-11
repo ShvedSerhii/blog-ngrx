@@ -1,16 +1,16 @@
 .wrapper {
-    display: grid;
-    margin: auto;
-    //min-height: 85vh;
-    max-width: 900px;
-    grid-template-columns: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    align-items: center;
-    justify-content: center;
-  }
-  .card {
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-  } 
+  display: grid;
+  margin: auto;
+  //min-height: 85vh;
+  max-width: 900px;
+  grid-template-columns: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}

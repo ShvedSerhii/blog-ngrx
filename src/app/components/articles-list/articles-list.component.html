@@ -1,10 +1,10 @@
 <div class="wrapper">
-    <mat-card class="card">
-      <button mat-button (click)="openDialog()">+ ADD NEW ARTICLE</button>
-    </mat-card>
-    <div class='list'>
-      <div *ngFor="let article of articles$ | async, let i = index">
-        <app-article [article]="article" [index]="i"></app-article>
-      </div>
-    </div> 
-  </div>  
+  <mat-card class="card">
+    <button mat-button (click)="openDialog()">+ ADD NEW ARTICLE</button>
+  </mat-card>
+  <div class='list'>
+    <div *ngFor="let article of articles$ | async, let i = index">
+      <app-article [article]="article" [index]="i"></app-article>
+    </div>
+  </div>
+</div>

@@ -3,8 +3,8 @@ import {
   FormControl,
   FormGroup,
   Validators
-} from "@angular/forms";
-import { Article } from "../../../models/article.model";
+} from '@angular/forms';
+import { Article } from '../../../models/article.model';
 /*
       ReactiveForm structure class
     */
@@ -23,15 +23,15 @@ export default class AddArticleForm {
     this.formGroup = this.formBuilder.group({
       title: new FormControl(this.model.title, {
         validators: [Validators.required],
-        updateOn: "change"
+        updateOn: 'change'
       }),
       author: new FormControl(this.model.author, {
         validators: [Validators.required],
-        updateOn: "change"
+        updateOn: 'change'
       }),
       content: new FormControl(this.model.content, {
         validators: [Validators.required],
-        updateOn: "change"
+        updateOn: 'change'
       })
     });
 
