@@ -3,6 +3,7 @@ import { Article } from 'src/app/models/article.model';
 import { ArticleService } from 'src/app/services/article.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddArticleComponent } from './add-article/add-article.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-articles-list',
@@ -10,12 +11,12 @@ import { AddArticleComponent } from './add-article/add-article.component';
   styleUrls: ['./articles-list.component.scss']
 })
 export class ArticlesListComponent {
-  public articles: Article[];
+  public articles$: Observable<Article[]>;
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog, private store: ArticleService
   ) {
-    
+    this.articles$ = store.entities$;
   }
 
   public openDialog(): void {
@@ -29,8 +30,9 @@ export class ArticlesListComponent {
         return;
       }
       if (result.title && result.author && result.content) {
-        
-      }
+        result.id = new Date().getUTCMilliseconds();
+        this.store.addOneToCache(result);
+      } 
     });
   }
 }

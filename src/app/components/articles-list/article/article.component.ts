@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Article } from 'src/app/models/article.model';
 import { MatDialog } from '@angular/material/dialog';
 import { AddArticleComponent } from '../add-article/add-article.component';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-article',
@@ -15,7 +16,7 @@ export class ArticleComponent {
   public data: Article;
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog, private store: ArticleService
   ) {
     this.data = new Article();
   }
@@ -23,7 +24,7 @@ export class ArticleComponent {
   public openDialog(): void {
     const dialogRef = this.dialog.open(AddArticleComponent, {
       width: '600px',
-      data: new Article()
+      data: {title: this.article.title, author: this.article.author, content: this.article.content}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -31,8 +32,13 @@ export class ArticleComponent {
         return;
       }
       if (result.title && result.author && result.content) {
-        
+        result.id = this.article.id;
+        this.store.updateOneInCache(result);
       }
     });
+  }
+
+  public delete(): void {
+    this.store.removeOneFromCache(this.article);
   }
 }
