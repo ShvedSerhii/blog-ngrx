@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Edit article</h1>
+<div mat-dialog-content>
+  <form class="edit-data-form" [formGroup]="form.formGroup">
+    <mat-form-field>
+      <input matInput placeholder="Title" formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Author" formControlName="author">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Content" formControlName="content"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="form.model" cdkFocusInitial [disabled]="form.formGroup.invalid">Submit</button>
+</div>
