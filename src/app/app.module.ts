@@ -19,6 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { entityConfig } from './services/entity-metadata';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { entityConfig } from './services/entity-metadata';
     ArticlesListComponent,
     ArticleComponent,
     AddArticleComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +43,10 @@ import { entityConfig } from './services/entity-metadata';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({router: routerReducer}),
     EffectsModule.forRoot([]),
-    EntityDataModule.forRoot(entityConfig)
+    EntityDataModule.forRoot(entityConfig),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }

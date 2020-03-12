@@ -17,6 +17,14 @@
   justify-content: flex-start;
 }
 
-.logout {
+.menu {
   justify-content: flex-end;
+}
+
+.router-link-active {
+  color: red;
+}
+
+span {
+  color: red;
 }

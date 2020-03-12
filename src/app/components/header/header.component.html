@@ -1,5 +1,9 @@
 <div class="wrapper">
     <div class="title">
-        <h1>NGRX Blog</h1>
+        <h1>NGRX Blog<span>{{rout$|async}}</span></h1>
     </div>
+    <div class="menu">
+        <a mat-button [routerLink]="['/home']" routerLinkActive="router-link-active" >HOME</a>
+        <a mat-button [routerLink]="['/articles']" routerLinkActive="router-link-active" >ARTICLES</a>
+    </div>  
 </div>
