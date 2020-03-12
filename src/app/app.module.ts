@@ -43,10 +43,10 @@ import { HomeComponent } from './components/home/home.component';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    StoreModule.forRoot({router: routerReducer}),
+    StoreModule.forRoot({ router: routerReducer }),
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }

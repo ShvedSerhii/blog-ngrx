@@ -1,14 +1,13 @@
 .wrapper {
-    display: grid;
-    margin: auto;
-    //min-height: 85vh;
-    max-width: 600px;
-    grid-template-columns: 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    align-items: center;
-    justify-content: center;
-  }
-  .card {
-    margin: 20px;
-  }
+  display: grid;
+  margin: auto;
+  max-width: 600px;
+  grid-template-columns: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  margin: 20px;
+}

@@ -15,16 +15,18 @@ export class ArticleComponent {
 
   public data: Article;
 
-  constructor(
-    public dialog: MatDialog, private store: ArticleService
-  ) {
+  constructor(public dialog: MatDialog, private store: ArticleService) {
     this.data = new Article();
   }
 
   public openDialog(): void {
     const dialogRef = this.dialog.open(AddArticleComponent, {
       width: '600px',
-      data: {title: this.article.title, author: this.article.author, content: this.article.content}
+      data: {
+        title: this.article.title,
+        author: this.article.author,
+        content: this.article.content
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {

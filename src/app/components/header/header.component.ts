@@ -10,9 +10,9 @@ import { selectUrl } from 'src/app/selectors/router.selectors';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public rout$: Observable<any>
+  public rout$: Observable<any>;
   constructor(public store: Store<any>) {
-    this.rout$ = store.select(selectUrl)
+    this.rout$ = store.select(selectUrl);
   }
 
   ngOnInit(): void {}
